@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<style>
+		html,
+		* {
+			margin: 0px;
+		}
+		.Section-Home {
+			width: 100vw;
+			height: 100vh;
+			background-image: url(img/wave.svg), url(img/blobscut/azul-esquerda.png),
+				url(img/blobscut/Laranja-direita.png);
+			background-position: bottom, left, right;
+			background-repeat: no-repeat;
+			background-size: auto;
+			background-color: #0066ff;
+		}
+
+		.Section-End {
+			width: 100vw;
+			height: 100vh;
+			transform: rotate(180deg);
+			background-image: url(img/wave.svg);
+			background-position: bottom;
+			background-repeat: no-repeat;
+			background-size: auto;
+			background-color: #0066ff;
+		}
+
+		.Section-Size {
+			width: 100vw;
+			height: 100vh;
+			background-image: url(img/blobscut/azul-esquerda-T.png);
+			background-position: left;
+			background-repeat: no-repeat;
+			background-size: auto;
+		}
+
+		.Section-Size2 {
+			width: 100vw;
+			height: 100vh;
+			background-image: url(img/blobscut/Laranja-direita-T.png);
+			background-position: right;
+			background-repeat: no-repeat;
+			background-size: auto;
+		}
+
+		.Footer {
+			background-color: #232323;
+			width: 100%;
+			height: 40vh;
+		}
+	</style>
+	<body>
+		<section class="Section-Home"></section>
+		<section class="Section-Size"></section>
+		<section class="Section-Size2"></section>
+		<section class="Section-End"></section>
+		<section class="Footer"></section>
+	</body>
+</html>
