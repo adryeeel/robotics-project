@@ -21,6 +21,8 @@
 
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 10rem;
 }
 
 body {
@@ -73,9 +75,12 @@ h6 {
 }
 
 .section__title {
+	margin-bottom: 5rem;
+}
+
+.section__title .title {
 	font-size: var(--font-size--title);
 	text-align: center;
-	margin: 1em 0;
 
 	background: linear-gradient(
 		45deg,
@@ -86,6 +91,11 @@ h6 {
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+.section__title .subtitle {
+	font-size: clamp(1.6rem, 2vmin + 0.1rem, 2.2rem);
+	text-align: center;
 }
 
 /* 
@@ -110,6 +120,17 @@ h6 {
 
 .header {
 	font-size: 1.8rem;
+	background-color: transparent;
+	padding: 1em 0;
+
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+
+	transition: background 250ms ease;
+}
+
+.header.background {
 	background-color: white;
 }
 
@@ -124,12 +145,37 @@ h6 {
 	padding: 0 8vmin;
 }
 
+.header__logo .logo a {
+	text-decoration: none;
+	color: var(--color--text--light);
+	font-weight: bold;
+
+	transition: color 250ms ease;
+}
+
+.header.background .header__logo .logo a {
+	color: var(--color--text);
+}
+
 .header__nav {
 	display: flex;
+	gap: 1rem;
 }
 
 .nav__item {
 	list-style-type: none;
+}
+
+.nav__item__anchor.highlighted {
+	background: linear-gradient(
+		to bottom left,
+		var(--color--analog),
+		var(--color--analog--lighter)
+	);
+
+	color: var(--color--text--light);
+	font-weight: 600;
+	border: 0;
 }
 
 .nav__item__anchor {
@@ -138,7 +184,21 @@ h6 {
 
 	display: inline-block;
 
-	padding: 1em;
+	padding: 0.3em 1em;
+
+	border-radius: 2rem;
+	color: var(--color--text--light);
+	transition: background 250ms ease, color 250ms ease;
+}
+
+.header.background .nav__item__anchor:not(.highlighted) {
+	background-color: #eee;
+	color: var(--color--text);
+}
+
+.nav__item__anchor:hover {
+	outline: 0.2rem solid var(--color--analog--lighter);
+	outline-offset: 0.2rem;
 }
 
 .header__hamburger {
@@ -253,6 +313,7 @@ h6 {
 	background-repeat: round;
 
 	min-height: 70svh;
+	padding-top: 6rem;
 }
 
 .home__hero {
@@ -442,8 +503,8 @@ h6 {
 	z-index: -1;
 
 	transform: skewY(-3deg);
-	backdrop-filter: blur(10px);
-	background-color: #00000021;
+	/* backdrop-filter: blur(10px); */
+	/* background-color: #00000021; */
 }
 
 /* Background patterns */
