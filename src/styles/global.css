@@ -16,6 +16,8 @@
 
 	--color--text: #000;
 	--color--text--light: #fff;
+
+	--font-size--title: clamp(3rem, 10vmin + 0.1rem, 4.5rem);
 }
 
 html {
@@ -60,6 +62,89 @@ h6 {
 	flex: 1 1 var(--max-width);
 }
 
+.section__title {
+	font-size: var(--font-size--title);
+	text-align: center;
+	margin: 1em 0;
+}
+
+/* 
+	####################
+	------ HEADER ------
+	####################
+					START
+*/
+
+.header {
+	font-size: 1.8rem;
+	background-color: white;
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	max-width: var(--max-width);
+	margin: 0 auto;
+
+	padding: 0 8vmin;
+}
+
+.header__nav {
+	display: flex;
+}
+
+.nav__item {
+	list-style-type: none;
+}
+
+.nav__item__anchor {
+	text-decoration: none;
+	font-weight: 500;
+
+	display: inline-block;
+
+	padding: 1em;
+}
+
+.header__hamburger {
+	border: 0;
+	background-color: transparent;
+
+	width: 3.5rem;
+	height: 3.5rem;
+
+	display: none;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.header__hamburger .line {
+	height: 5px;
+	width: 100%;
+	border-radius: 2rem;
+	background-color: black;
+}
+
+@media screen and (max-width: 768px) {
+	.header__nav {
+		display: none;
+	}
+
+	.header__hamburger {
+		display: flex;
+		margin: 1em 0;
+	}
+}
+
+/* 
+	####################
+	------ HEADER ------
+	####################
+					END
+*/
+
 /* 
 	####################
 	------- MAIN -------
@@ -102,10 +187,6 @@ main {
 .main__blob__image {
 	max-width: 100%;
 }
-/* 
-main > .main__blob:nth-of-type(1) {
-	filter: blur(10px);
-} */
 
 main > .main__blob:nth-of-type(2) {
 	top: 50%;
@@ -113,7 +194,7 @@ main > .main__blob:nth-of-type(2) {
 
 /* 
 	####################
-	--- HOME SECTION ---
+	------- MAIN -------
 	####################
 					END
 */
@@ -126,9 +207,11 @@ main > .main__blob:nth-of-type(2) {
 */
 
 .home {
-	background: url(imgs/bg/bg-Inicio.png);
+	background: url(../imgs/background/home.png);
 	background-size: cover;
 	background-repeat: round;
+
+	min-height: 70svh;
 }
 
 .home__container {
@@ -140,6 +223,8 @@ main > .main__blob:nth-of-type(2) {
 .home__hero {
 	display: flex;
 	gap: 2rem;
+
+	margin-top: 8vmin;
 }
 
 .home__hero__content {
@@ -179,14 +264,43 @@ main > .main__blob:nth-of-type(2) {
 
 /* 
 	####################
+	--- APRESENT SECTION ---
+	####################
+					START
+*/
+
+.presentation__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin-bottom: 8rem;
+}
+
+.presentation__content__title {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.presentation__content__text {
+	max-width: 800px;
+}
+
+/* 
+	####################
+	--- APRESENT SECTION ---
+	####################
+					END
+*/
+
+/* 
+	####################
 	--- ABOUT SECTION ---
 	####################
 					START
 */
 
 .about__title {
-	font-size: clamp(2rem, 8vmin + 0.1rem, 4rem);
-
 	display: flex;
 	justify-content: center;
 
@@ -196,9 +310,10 @@ main > .main__blob:nth-of-type(2) {
 .about__cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	justify-items: center;
 	gap: 2rem;
 
-	background-image: url(imgs/trianglos/Trianglo-laranja-1.png);
+	background-image: url(../imgs/patterns/orange.png);
 	background-position: center;
 	background-size: 60%;
 	padding: 3rem;
@@ -239,6 +354,48 @@ main > .main__blob:nth-of-type(2) {
 /* 
 	####################
 	--- ABOUT SECTION ---
+	####################
+					END
+*/
+
+/* 
+	####################
+	------ GALLERY -----
+	####################
+					START
+*/
+
+.gallery {
+	margin: 5rem 0;
+	position: relative;
+}
+
+.gallery::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+
+	transform: skewY(-3deg);
+	backdrop-filter: blur(10px);
+	background-color: #00000021;
+}
+
+.carousel-cell {
+	width: 100%;
+	margin-right: 20px;
+
+	display: flex;
+	justify-content: center;
+}
+
+.carousel-cell img {
+	width: 60%;
+}
+
+/* 
+	####################
+	------ GALLERY -----
 	####################
 					END
 */
@@ -320,7 +477,7 @@ main > .main__blob:nth-of-type(2) {
 
 .CardsRobo__card:hover span {
 	top: 0;
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 
 .CardsRobo__card:hover {
@@ -335,6 +492,52 @@ main > .main__blob:nth-of-type(2) {
 /* 
 	####################
 	--- CARDSROBOS SECTION ---
+	####################
+					END
+*/
+
+/* 
+	####################
+	--- FOOTER SECTION ---
+	####################
+					START
+*/
+
+.footer {
+	margin-top: 10rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: hsl(253, 10%, 18%);
+}
+.footer__Container {
+	width: 100%;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 8vmin;
+	flex: 1 1 auto;
+}
+.footer_Col50 {
+	margin: 40px;
+	height: 49%;
+}
+.footer__Title {
+	color: white;
+	font-size: 2.7rem;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+.footer__Description {
+	color: white;
+	font-size: 1.8rem;
+	text-align: center;
+}
+
+/* 
+	####################
+	--- FOOTER SECTION ---
 	####################
 					END
 */

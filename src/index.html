@@ -19,23 +19,51 @@
 			crossorigin="anonymous"
 		></script>
 
-		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="astronaut.css" />
-		<link rel="stylesheet" href="Rocket.css" />
+		<script defer src="script/flickity.pkgd.min.js"></script>
+		<script defer src="script/carousels.js"></script>
+
+		<link rel="stylesheet" href="styles/flickity.css" />
+		<link rel="stylesheet" href="styles/global.css" />
+		<link rel="stylesheet" href="styles/components/astronaut.css" />
+		<link rel="stylesheet" href="styles/components/rocket.css" />
 	</head>
 	<body>
-		<header class="header"></header>
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<p class="logo">AECProbos</p>
+				</div>
+
+				<button type="menu" class="header__hamburger">
+					<span class="line"></span>
+					<span class="line"></span>
+					<span class="line"></span>
+				</button>
+
+				<nav class="header__nav">
+					<li class="nav__item">
+						<a href="#" class="nav__item__anchor">Projeto</a>
+					</li>
+					<li class="nav__item">
+						<a href="#" class="nav__item__anchor">Robôs</a>
+					</li>
+					<li class="nav__item">
+						<a href="#" class="nav__item__anchor">Galeria</a>
+					</li>
+				</nav>
+			</div>
+		</header>
 
 		<main class="main">
 			<div class="main__blob right">
 				<img
-					src="imgs/Blobs/Blob-Laranjal-1.png"
+					src="imgs/blobs/simple/orange-1.png"
 					alt=""
 					class="main__blob__image"
 				/>
 			</div>
 
-			<section class="section section--half home">
+			<section class="section home">
 				<div class="section__container home__container">
 					<div class="home__hero">
 						<div class="home__hero__element">
@@ -64,17 +92,32 @@
 
 			<div class="main__blob left">
 				<img
-					src="imgs/Blobs/Blob-azul-1.png"
+					src="imgs/blobs/simple/blue-1.png"
 					alt=""
 					class="main__blob__image"
 				/>
 			</div>
 
+			<section class="section section--full-height apresent">
+				<div class="section__container apresent__container">
+					<div class="presentation__content">
+						<h2 class="section__title presentation__content__title">Olá.</h2>
+
+						<p class="presentation__content__text">
+							O Clube Ciência Viva na Escola AEC Probos encontra-se no
+							Agrupamento de Escolas de Carvalhos. Tem como áreas temáticas
+							principais a Programação e Robótica. Destina-se, essencialmente, a
+							alunos do 3º ciclo e ensino profissional, existindo, no entanto,
+							algumas atividades que têm como público-alvo principal outros
+							níveis de ensino.
+						</p>
+					</div>
+				</div>
+			</section>
+
 			<section class="section section--full-height about">
 				<div class="section__container about__container">
-					<div class="about__title">
-						<h2>Nossos objetivos</h2>
-					</div>
+					<h2 class="section__title about__title">Nossos objetivos</h2>
 
 					<div class="about__cards">
 						<div class="card about__card">
@@ -85,8 +128,10 @@
 							<h3 class="about__card__title">Aprendizado</h3>
 
 							<p class="about__card__text">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Doloribus eum, est aspernatur a sequi quas.
+								Combater desigualdades, fazendo com que os alunos,
+								independentemente de fatores culturais, socioeconómicos ou de
+								género, tenham oportunidade de participar de modo pleno e
+								efetivo nas atividades;
 							</p>
 						</div>
 
@@ -98,8 +143,9 @@
 							<h3 class="about__card__title">Trabalho</h3>
 
 							<div class="about__card__text">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Doloribus eum, est aspernatur a sequi quas.
+								Dinamizar atividades práticas e experimentais que fomentem o
+								sucesso dos alunos, promovendo atividades transversais,
+								interdisciplinares e o trabalho colaborativo.
 							</div>
 						</div>
 
@@ -111,9 +157,27 @@
 							<h3 class="about__card__title">Tecnologia</h3>
 
 							<div class="about__card__text">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Doloribus eum, est aspernatur a sequi quas.
+								Contribuir para o desenvolvimento da literacia científica e
+								tecnológica da comunidade.
 							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section section--half gallery">
+				<div class="section__container gallery__container">
+					<h2 class="section__title gallery__title">Galeria</h2>
+
+					<div class="gallery-carousel">
+						<div class="div carousel-cell">
+							<img src="imgs/robots/arduino.png" alt="" />
+						</div>
+						<div class="div carousel-cell">
+							<img src="imgs/robots/impressora.png" alt="" />
+						</div>
+						<div class="div carousel-cell">
+							<img src="imgs/robots/mbot.png" alt="" />
 						</div>
 					</div>
 				</div>
@@ -122,54 +186,86 @@
 			<section class="section section--full-height CardsRobo">
 				<div class="section__container CardsRobo__container">
 					<div class="CardsRobo__title">
-						<h2>Robos</h2>
-					</div>			
-						<div class="Rocket__rocket">
-							<div class="Rocket__rocket-body">
+						<style>
+							/* === removing default button style ===*/
+
+							/* button styling */
+							.CardsRobo__Tittles {
+								--text-stroke-color: rgba(255, 255, 255, 0.6);
+								--animation-color: #0066ff;
+								text-decoration: none;
+								position: relative;
+								text-transform: uppercase;
+							}
+							/* this is the text, when you hover on button */
+							.hover-text {
+								position: absolute;
+								box-sizing: border-box;
+								content: attr(data-text);
+								color: var(--animation-color);
+								width: 0%;
+								inset: 0;
+								border-right: var(--border-right) solid var(--animation-color);
+								overflow: hidden;
+								transition: 0.5s;
+								-webkit-text-stroke: 1px var(--animation-color);
+							}
+							/* hover */
+							.CardsRobo__Tittles:hover .hover-text {
+								width: 100%;
+								filter: drop-shadow(0 0 23px var(--animation-color));
+							}
+						</style>
+						<div data-text="Awesome" class="CardsRobo__Tittles">
+							<span class="actual-text"
+								>&nbsp;
+								<h2>Robos</h2>
+								&nbsp;</span
+							>
+							<span class="hover-text" aria-hidden="true"
+								>&nbsp;
+								<h2>Robos</h2>
+								&nbsp;</span
+							>
+						</div>
+					</div>
+					<div class="Rocket__rocket">
+						<div class="Rocket__rocket-body">
 							<div class="Rocket__body"></div>
 							<div class="Rocket__fin Rocket__fin-left"></div>
 							<div class="Rocket__fin Rocket__fin-right"></div>
 							<div class="Rocket__window"></div>
-							</div>
 						</div>
+					</div>
 					<!-- cards -->
 					<div class="CardsRobo__cards">
 						<div class="CardsRobo__card">
 							<div class="CardsRobo__icon">
-								<img
-									src="imgs/Blobs/Blob-Laranjal-1.png"
-									alt=""
-									width="200px"
-								/>
+								<img src="imgs/robots/mbot.png" alt="" width="200px" />
 							</div>
 							<span>
-								<strong> Impresora 3d </strong>
+								M-Bot <br />
+								Realização de pequenos projetos práticos utilizando o MBot.
 							</span>
 						</div>
 
 						<div class="CardsRobo__card">
 							<div class="CardsRobo__icon">
-								<img
-									src="imgs/Blobs/Blob-Laranjal-1.png"
-									alt=""
-									width="200px"
-								/>
+								<img src="imgs/robots/impressora.png" alt="" width="200px" />
 							</div>
 							<span>
-								<strong> Impresora 3d </strong>
+								Impresora 3D <br />
+								Criação e impressão de pequenas peças em 3D.
 							</span>
 						</div>
 
 						<div class="CardsRobo__card">
 							<div class="CardsRobo__icon">
-								<img
-									src="imgs/Blobs/Blob-Laranjal-1.png"
-									alt=""
-									width="200px"
-								/>
+								<img src="imgs/robots/arduino.png" alt="" width="200px" />
 							</div>
 							<span>
-								<strong> Impresora 3d </strong>
+								Arduino <br />
+								Realização de pequenos projetos práticos utilizando o Arduino.
 							</span>
 						</div>
 					</div>
@@ -177,6 +273,53 @@
 			</section>
 		</main>
 
-		<footer class="footer"></footer>
+		<footer class="footer">
+			<div class="footer__Container">
+				<div class="footer_Col50">
+					<div class="footer__Title">
+						<h2>AECProbos</h2>
+					</div>
+					<div class="footer__Description">
+						Agrupamento de Escolas de Carvalhos <br />
+						R. Eng. Domingos Oliveira, 3 4415-136 Pedroso <br />
+						Telefone: 22 782 3077
+					</div>
+				</div>
+
+				<!-- <div class="footer_Col50">asdadasda</div> -->
+			</div>
+		</footer>
 	</body>
 </html>
+
+<!-- Extras -->
+
+<!-- <style>
+				.seo-bg-shape-3 {
+					position: absolute;
+					right: 20%;
+					width: 70px;
+					-webkit-transform: translateX(0%);
+					transform: translateX(0%);
+					z-index: -1;
+				}
+
+				.left-right-animation {
+					animation: left_right 3s ease-in-out infinite alternate-reverse;
+				}
+
+				@keyframes left_right {
+					0% {
+						transform: translateX(0);
+					}
+
+					100% {
+						transform: translateX(-20px);
+					}
+				}
+			</style>
+			<img
+				class="seo-bg-shape-3 left-right-animation"
+				src="imgs/blobs/simple/orange-1.png"
+				alt="bg-shape"
+			/> -->
