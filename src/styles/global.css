@@ -521,6 +521,13 @@ h6 {
 	/* background-color: #00000021; */
 }
 
+.gallery__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 /* Background patterns */
 .gallery__container::before {
 	content: "";
@@ -586,7 +593,6 @@ h6 {
 
 .gallery-carousel {
 	flex: 1 1 50%;
-	/* max-width: 50vmin; */
 }
 
 .carousel-cell {
@@ -607,6 +613,7 @@ h6 {
 @media screen and (max-width: 768px) {
 	.gallery__content {
 		flex-wrap: wrap-reverse;
+		max-width: 70vmin;
 	}
 }
 
@@ -781,9 +788,51 @@ h6 {
 					START
 */
 
+.enroll {
+	position: relative;
+}
+
 .enroll__container {
 	display: flex;
 	flex-direction: column;
+	position: relative;
+}
+
+.enroll::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: -1;
+	rotate: 30deg;
+
+	background-image: url(../imgs/bubbles/bubble-5.png);
+	background-position: right left;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	width: 50vmin;
+	height: 50vmin;
+	filter: blur(10px);
+	opacity: 0.5;
+}
+
+.enroll__container::after {
+	content: "";
+	position: absolute;
+	top: 50vmin;
+	right: -20%;
+
+	z-index: -1;
+	rotate: 30deg;
+
+	background-image: url(../imgs/patterns/blue.png);
+	background-position: right top;
+	background-repeat: no-repeat;
+
+	width: 35vmin;
+	height: 35vmin;
 }
 
 .enroll__form {
@@ -792,7 +841,8 @@ h6 {
 	min-height: min(70vmin, 50rem);
 	width: min(70vmin, 50rem);
 
-	background-color: #eee;
+	background-color: #dddddd8c;
+	backdrop-filter: blur(10px);
 	position: relative;
 
 	border-radius: 2rem;
@@ -803,6 +853,7 @@ h6 {
 
 .enroll__form::before {
 	content: "";
+	display: none;
 	position: absolute;
 	inset-block: 0;
 	left: -49%;
@@ -914,6 +965,12 @@ h6 {
 	opacity: 0.9;
 }
 
+@media screen and (min-width: 768px) {
+	.enroll__form::before {
+		display: block;
+	}
+}
+
 /* 
 	####################
 	-- ENROLL SECTION --
@@ -958,6 +1015,14 @@ h6 {
 	color: white;
 	font-size: 1.8rem;
 	text-align: center;
+}
+
+
+.footer_Col40{
+	height: 50px;
+	display: flex;
+	gap:20px;
+	justify-content: center;
 }
 
 /* 
