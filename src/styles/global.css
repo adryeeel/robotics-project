@@ -9,15 +9,14 @@
 
 	--color--main: #0066ff;
 	--color--main--lighter: #66c3ff;
-	--color--main-clean: #2079ff;
 
-	--color--analog: ##ff630b;
-	--color--analog--lighter: ##ffae84;
+	--color--analog: #ff630b;
+	--color--analog--lighter: #ffae84;
 
 	--color--text: #000;
 	--color--text--light: #fff;
 
-	--font-size--title: clamp(3rem, 10vmin + 0.1rem, 4.5rem);
+	--font-size--title: clamp(4rem, 6vmin + 0.1rem, 5.5rem);
 }
 
 html {
@@ -41,8 +40,19 @@ h6 {
 	font-family: "Montserrat", sans-serif;
 }
 
+/* 
+	###################
+	- SECTION CLASSES -
+	###################
+				START
+*/
+
 .section {
 	display: flex;
+}
+
+.section:not(.home) {
+	margin-bottom: 25vmin;
 }
 
 .section--full {
@@ -66,6 +76,29 @@ h6 {
 	font-size: var(--font-size--title);
 	text-align: center;
 	margin: 1em 0;
+
+	background: linear-gradient(
+		45deg,
+		var(--color--analog),
+		var(--color--analog--lighter)
+	);
+
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* 
+	###################
+	- SECTION CLASSES -
+	###################
+					END
+*/
+
+.flex--center {
+	display: flex;
+	align-items: center;
+	justify-items: center;
 }
 
 /* 
@@ -152,7 +185,7 @@ h6 {
 					START
 */
 
-main {
+.main {
 	position: relative;
 }
 
@@ -188,8 +221,16 @@ main {
 	max-width: 100%;
 }
 
-main > .main__blob:nth-of-type(2) {
+.main > .main__blob:nth-of-type(2) {
 	top: 50%;
+}
+
+.main > .main__blob:nth-of-type(3) {
+	translate: 0 -20%;
+}
+
+.main > .main__blob:nth-of-type(3) .main__blob__image {
+	rotate: -45deg;
 }
 
 /* 
@@ -214,28 +255,19 @@ main > .main__blob:nth-of-type(2) {
 	min-height: 70svh;
 }
 
-.home__container {
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-}
-
 .home__hero {
 	display: flex;
-	gap: 2rem;
+	justify-content: center;
+	gap: 3rem;
 
 	margin-top: 8vmin;
 }
 
 .home__hero__content {
-	flex: 1 1 55%;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
-
-/* Astronauta */
 
 .home__hero__title,
 .home__hero__subtitle {
@@ -243,7 +275,7 @@ main > .main__blob:nth-of-type(2) {
 }
 
 .home__hero__title {
-	font-size: 5rem;
+	font-size: clamp(3rem, 5vmin + 0.1rem, 5rem);
 	margin-bottom: 1rem;
 }
 
@@ -251,8 +283,14 @@ main > .main__blob:nth-of-type(2) {
 	font-size: 2rem;
 }
 
-.home__hero__element {
-	flex: 1 1 45%;
+@media screen and (max-width: 768px) {
+	.home {
+		min-height: 100svh;
+	}
+
+	.home__hero {
+		flex-wrap: wrap;
+	}
 }
 
 /* 
@@ -264,9 +302,9 @@ main > .main__blob:nth-of-type(2) {
 
 /* 
 	####################
-	--- APRESENT SECTION ---
+	PRESENTATION SECTION
 	####################
-					START
+				START
 */
 
 .presentation__content {
@@ -288,7 +326,7 @@ main > .main__blob:nth-of-type(2) {
 
 /* 
 	####################
-	--- APRESENT SECTION ---
+	PRESENTATION SECTION
 	####################
 					END
 */
@@ -300,28 +338,58 @@ main > .main__blob:nth-of-type(2) {
 					START
 */
 
-.about__title {
+.goals__container {
 	display: flex;
-	justify-content: center;
-
-	margin-bottom: 5rem;
+	flex-direction: column;
+	position: relative;
 }
 
-.about__cards {
+.goal__cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	justify-items: center;
 	gap: 2rem;
+}
+.goals__container::before {
+	content: "";
+	position: absolute;
+	top: -70%;
+	left: -30%;
+
+	rotate: 30deg;
+
+	z-index: -1;
+
+	background-image: url(../imgs/patterns/blue.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-position: top center;
+
+	width: 35vmin;
+	height: 35vmin;
+}
+
+.goals__container::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -20%;
+
+	rotate: 30deg;
+
+	z-index: -1;
 
 	background-image: url(../imgs/patterns/orange.png);
 	background-position: center;
-	background-size: 60%;
-	padding: 3rem;
+	background-repeat: no-repeat;
+
+	width: 35vmin;
+	height: 35vmin;
 }
 
-.about__cards .card {
+.goal__card {
 	width: 100%;
-	max-width: 350px;
+	max-width: max(50vmin, 350px);
 
 	background-color: #eeeeee7d;
 
@@ -335,18 +403,18 @@ main > .main__blob:nth-of-type(2) {
 	transition: transform 200ms ease, background-color 200ms ease;
 }
 
-.about__cards .card:hover {
+.goal__card:hover {
 	transform: scale(1.05);
 	background-color: #ddddddb6;
 }
 
-.about__card__icon {
+.goal__card__icon {
 	color: var(--color--main);
 	font-size: 5rem;
 	align-self: center;
 }
 
-.about__card__title {
+.goal__card__title {
 	margin-bottom: 1em;
 	text-align: center;
 	font-size: 2.5rem;
@@ -366,8 +434,8 @@ main > .main__blob:nth-of-type(2) {
 */
 
 .gallery {
-	margin: 5rem 0;
 	position: relative;
+	padding: 8vmin 0;
 }
 
 .gallery::after {
@@ -381,16 +449,93 @@ main > .main__blob:nth-of-type(2) {
 	background-color: #00000021;
 }
 
+/* Background patterns */
+.gallery__container::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	translate: 0 -50%;
+	right: 0;
+
+	z-index: -1;
+	rotate: 30deg;
+
+	background-image: url(../imgs/patterns/blue.png);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+
+	width: 35vmin;
+	height: 35vmin;
+}
+
+/* Background patterns */
+.gallery__container::after {
+	content: "";
+	position: absolute;
+	top: -20%;
+	left: 20%;
+
+	z-index: -1;
+	rotate: 30deg;
+
+	background-image: url(../imgs/patterns/orange.png);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+
+	width: 35vmin;
+	height: 35vmin;
+}
+
+.gallery__content {
+	display: flex;
+	gap: 2rem;
+
+	background-image: url(../imgs/background/gallery.svg);
+	background-size: cover;
+	background-position: center;
+	border-radius: 3rem;
+}
+
+.gallery__description {
+	flex: 1 1 50%;
+	padding: 2.5em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	color: var(--color--text--light);
+}
+
+.gallery__description__title {
+	font-size: 3rem;
+	margin-bottom: 1em;
+}
+
+.gallery-carousel {
+	flex: 1 1 50%;
+	/* max-width: 50vmin; */
+}
+
 .carousel-cell {
 	width: 100%;
 	margin-right: 20px;
 
 	display: flex;
 	justify-content: center;
+
+	padding: 50px;
 }
 
 .carousel-cell img {
-	width: 60%;
+	width: 100%;
+	height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	.gallery__content {
+		flex-wrap: wrap-reverse;
+	}
 }
 
 /* 
@@ -401,98 +546,159 @@ main > .main__blob:nth-of-type(2) {
 */
 
 /* 
-	####################
-	---	CARDSROBOS SECTION ---
-	####################
+	#####################
+	--- ROBOT SECTION ---
+	#####################
 					START
 */
 
-.CardsRobo__title {
-	font-size: 4rem;
-
-	display: flex;
-	justify-content: center;
-
-	margin-bottom: 1rem;
+.robots__container {
+	position: relative;
 }
 
-.CardsRobo {
-	overflow-y: hidden;
+.robots__container::before {
+	content: "";
+	position: absolute;
+	top: 30%;
+	translate: 0 -50%;
+	left: -20%;
+
+	z-index: -1;
+	rotate: 70deg;
+
+	background-image: url(../imgs/patterns/orange.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+
+	width: 35vmin;
+	height: 35vmin;
 }
 
-.CardsRobo__cards {
+.robot__cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 2rem;
+	justify-items: center;
 }
 
-.CardsRobo__card {
+.robot__card {
+	max-width: max(50vmin, 350px);
+	background-color: #eeeeee7d;
 	backdrop-filter: blur(10px);
-	max-width: 33ch;
-	text-align: center;
-	background: #eeeeeed6;
-	padding: 1.5em;
-	padding-block: 1.8em;
-	border-radius: 15px;
-	position: relative;
+	border-radius: 2rem;
 	overflow: hidden;
-	transition: 0.3s cubic-bezier(0.6, 0.4, 0, 1), transform 0.15s ease;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 1em;
+
+	height: min-content;
+
+	box-shadow: 0 0 1rem #00000030;
 }
 
-.CardsRobo__card__body {
-	color: #464853;
-	line-height: 1.5em;
-	font-size: 1em;
+.robot__card:hover .robot__card__button {
+	opacity: 1;
+	visibility: visible;
 }
 
-.CardsRobo__card > :not(span) {
-	transition: 0.3s cubic-bezier(0.6, 0.4, 0, 1);
+.robot__card:hover .robot__card__content {
+	padding-bottom: calc(1.5em + 4rem);
 }
 
-.CardsRobo__card > strong {
-	display: block;
-	font-size: 1.4rem;
-	letter-spacing: -0.035em;
+.robot__card__image {
+	padding: 2em;
 }
 
-.CardsRobo__card span {
-	position: absolute;
-	inset: 0;
+.robot__card__image img {
 	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+}
+
+.robot__card__content {
+	background: linear-gradient(
+		to left,
+		var(--color--main--lighter),
+		var(--color--main)
+	);
+
 	color: var(--color--text--light);
-	border-radius: 5px;
-	font-weight: bold;
-	top: 100%;
-	transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
+
+	position: relative;
+	padding: 0 1.5em 1.5em;
+	transition: padding-bottom 200ms ease;
 }
 
-.CardsRobo__card:hover span {
-	top: 0;
-	font-size: 1.3em;
+.robot__card__content::after {
+	content: "";
+	position: absolute;
+	top: -3rem;
+	left: 0;
+
+	border-top-right-radius: 50%;
+	border-top-left-radius: 50%;
+	z-index: -1;
+
+	width: 100%;
+	height: 4rem;
+	background: linear-gradient(
+		to left,
+		var(--color--main--lighter),
+		var(--color--main)
+	);
 }
 
-.CardsRobo__card:hover {
-	background: var(--color--main-clean);
+.robot__card__title {
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 0.5em;
 }
 
-.CardsRobo__card:hover > div,
-.CardsRobo__card:hover > strong {
+.robot__card__button {
+	border: 0;
+	padding: 0.5em 1em;
+
+	margin-bottom: 1.6em;
+	border-radius: 1rem;
+
+	background-color: #109efd;
+
+	visibility: hidden;
 	opacity: 0;
+
+	position: absolute;
+	bottom: 0;
+
+	transition: opacity 200ms ease, visibility 200ms ease;
 }
 
-/* 
-	####################
-	--- CARDSROBOS SECTION ---
-	####################
+.robot__card__button:hover {
+	outline: 2px solid white;
+	outline-offset: 3px;
+}
+.robot__card__button:active {
+	background-color: var(--color--main--lighter);
+}
+
+.robot__button__anchor {
+	text-decoration: none;
+	font-weight: 500;
+	color: var(--color--text--light);
+}
+
+@media screen and (max-width: 768px) {
+	.robot__card__button {
+		opacity: 1;
+		visibility: visible;
+		position: static;
+		margin-top: 3rem;
+		margin-bottom: 0;
+	}
+
+	.robot__card:hover .robot__card__content {
+		padding-bottom: 1.5em;
+	}
+}
+
+/*  
+	#####################
+	--- ROBOT SECTION ---
+	#####################
 					END
 */
 
