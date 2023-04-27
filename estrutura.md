@@ -6,3 +6,9 @@ Cards Robos
 Galeria de fotos
 Parceiros
 Footer
+
+# TO-DO
+
+- Animaoes scroll
+- Header
+- Descricoes da galeria com JS
