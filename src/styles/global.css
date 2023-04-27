@@ -762,6 +762,47 @@ h6 {
 
 /* 
 	####################
+	-- ENROLL SECTION --
+	####################
+					START
+*/
+
+.enroll__container {
+	display: flex;
+	flex-direction: column;
+}
+
+.enroll__form {
+	align-self: center;
+
+	height: 500px;
+	width: 500px;
+
+	background-color: #eee;
+	position: relative;
+}
+
+.enroll__form::before {
+	content: "";
+	position: absolute;
+	inset-block: 0;
+	left: -55%;
+	width: 400px;
+
+	background-image: url(../imgs/robots/robot-side-hands.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+/* 
+	####################
+	-- ENROLL SECTION --
+	####################
+					END
+*/
+
+/* 
+	####################
 	--- FOOTER SECTION ---
 	####################
 					START
