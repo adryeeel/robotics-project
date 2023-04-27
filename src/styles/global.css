@@ -17,6 +17,10 @@
 	--color--text--light: #fff;
 
 	--font-size--title: clamp(4rem, 6vmin + 0.1rem, 5.5rem);
+
+	--gradient--blue: linear-gradient(to bottom left, #0066ff, #66c3ff);
+
+	--gradient--orange: linear-gradient(to left, #ffae84, #ff630b);
 }
 
 html {
@@ -82,11 +86,7 @@ h6 {
 	font-size: var(--font-size--title);
 	text-align: center;
 
-	background: linear-gradient(
-		45deg,
-		var(--color--analog),
-		var(--color--analog--lighter)
-	);
+	background: var(--gradient--orange);
 
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -132,6 +132,7 @@ h6 {
 
 .header.background {
 	background-color: white;
+	box-shadow: 0 0 1rem #00000030;
 }
 
 .header__container {
@@ -363,7 +364,7 @@ h6 {
 
 /* 
 	####################
-	ABOUT SECTION
+	-- ABOUT SECTION --
 	####################
 				START
 */
@@ -384,7 +385,7 @@ h6 {
 
 /* 
 	####################
-	ABOUT SECTION
+	-- ABOUT SECTION --
 	####################
 					END
 */
@@ -466,10 +467,23 @@ h6 {
 	background-color: #ddddddb6;
 }
 
+.goal__card:hover .goal__card__icon {
+	rotate: 1turn;
+	transition: rotate 400ms ease;
+}
+
 .goal__card__icon {
-	color: var(--color--main);
 	font-size: 5rem;
 	align-self: center;
+}
+
+.goal__card__title,
+.goal__card__icon {
+	background: var(--gradient--blue);
+
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .goal__card__title {
@@ -605,7 +619,7 @@ h6 {
 
 /* 
 	#####################
-	--- ROBOT SECTION ---
+	-- ROBOTS SECTION --
 	#####################
 					START
 */
@@ -634,13 +648,13 @@ h6 {
 
 .robot__cards {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 2rem;
 	justify-items: center;
 }
 
 .robot__card {
-	max-width: max(50vmin, 350px);
+	max-width: max(40vmin, 350px);
 	background-color: #eeeeee7d;
 	backdrop-filter: blur(10px);
 	border-radius: 2rem;
@@ -775,23 +789,129 @@ h6 {
 .enroll__form {
 	align-self: center;
 
-	height: 500px;
-	width: 500px;
+	min-height: min(70vmin, 50rem);
+	width: min(70vmin, 50rem);
 
 	background-color: #eee;
 	position: relative;
+
+	border-radius: 2rem;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .enroll__form::before {
 	content: "";
 	position: absolute;
 	inset-block: 0;
-	left: -55%;
-	width: 400px;
+	left: -49%;
+	width: 35rem;
 
-	background-image: url(../imgs/robots/robot-side-hands.png);
+	background-image: url(../imgs/robots/robot-side-finger.png);
 	background-size: contain;
 	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+.form__title .subtitle {
+	margin: 2rem 3rem 4rem 3rem;
+}
+
+.form__title .title {
+	text-align: center;
+	font-size: 4rem;
+
+	background: var(--gradient--blue);
+
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.enroll__form form {
+	display: flex;
+	flex-direction: column;
+}
+
+.enroll__form__label {
+	margin-bottom: 2.5rem;
+	position: relative;
+}
+
+.enroll__form__input {
+	width: 100%;
+	border: 0;
+	padding: 1.2em 2rem 1.2em;
+	border-radius: 1rem;
+}
+
+.enroll__form__input::placeholder {
+	opacity: 0;
+}
+
+.enroll__form__input:focus {
+	outline: var(--color--main) 2px solid;
+	outline-offset: 5px;
+}
+
+.enroll__form__input:focus + span,
+.enroll__form__input:not(:placeholder-shown) + span {
+	translate: 0 -4.5rem;
+	background: var(--gradient--blue);
+	padding: 0.3em 1em;
+	font-size: 1.4rem;
+	color: var(--color--text--light);
+	font-weight: 600;
+
+	border-radius: 1rem;
+}
+
+.enroll__form__label:last-of-type {
+	accent-color: var(--color--main);
+	display: flex;
+	justify-content: space-between;
+}
+
+.enroll__form__select {
+	padding: 0.5em 1em;
+	border: 0;
+	background-color: white;
+	border-radius: 1rem;
+}
+
+.enroll__form__text {
+	display: inline-block;
+	margin-left: 2rem;
+	margin-bottom: 0.5rem;
+
+	position: absolute;
+
+	top: 50%;
+	translate: 0 -50%;
+	left: 0;
+
+	transition: translate 200ms ease;
+}
+
+.enroll__form__button {
+	padding: 0.8em 0;
+	border: 0;
+	border-radius: 1rem;
+
+	background: var(--gradient--blue);
+	font-weight: bold;
+	color: var(--color--text--light);
+	font-size: 1.8rem;
+}
+
+.enroll__form__button:hover {
+	outline: 0.2rem solid var(--color--main);
+	outline-offset: 0.5rem;
+}
+
+.enroll__form__button:active {
+	opacity: 0.9;
 }
 
 /* 

@@ -140,10 +140,10 @@
 					<div class="goal__cards">
 						<div class="goal__card">
 							<div class="goal__card__icon">
-								<i class="fa-solid fa-lightbulb"></i>
+								<i class="fa-solid fa-heart"></i>
 							</div>
 
-							<h3 class="goal__card__title">Aprender é</h3>
+							<h3 class="goal__card__title">Social</h3>
 							<p class="goal__card__text">
 								Combater desigualdades, fazendo com que os alunos,
 								independentemente de fatores culturais, socioeconómicos ou de
@@ -154,14 +154,14 @@
 
 						<div class="goal__card">
 							<div class="goal__card__icon">
-								<i class="fa-solid fa-check"></i>
+								<i class="fa-solid fa-lightbulb"></i>
 							</div>
 
-							<h3 class="goal__card__title">Trabalhar com</h3>
+							<h3 class="goal__card__title">Trabalho</h3>
 							<div class="goal__card__text">
-								Atividades práticas e experimentais que fomentem o
-								sucesso dos alunos, promovendo atividades transversais,
-								interdisciplinares e o trabalho colaborativo.
+								Atividades práticas e experimentais que fomentem o sucesso dos
+								alunos, promovendo atividades transversais, interdisciplinares e
+								o trabalho colaborativo.
 							</div>
 						</div>
 
@@ -225,7 +225,6 @@
 
 			<section id="robots" class="section robots">
 				<div class="section__container robots__container">
-
 					<div class="section__title">
 						<h2 class="title">A nossa tecnologia</h2>
 					</div>
@@ -292,7 +291,65 @@
 						</p>
 					</div>
 
-					<div class="enroll__form"></div>
+					<div class="enroll__form">
+						<div class="form__title">
+							<h3 class="title">Matrícula</h3>
+							<p class="subtitle">
+								Entre em contacto e lhe responderemos o mais breve possível.
+							</p>
+						</div>
+						<form method="post">
+							<label for="name" class="enroll__form__label">
+								<input
+									required
+									type="text"
+									name="name"
+									id="name"
+									class="enroll__form__input"
+									placeholder="Nome"
+								/>
+								<span class="enroll__form__text">Nome</span>
+							</label>
+							<label for="email" class="enroll__form__label">
+								<input
+									required
+									type="text"
+									name="name"
+									id="name"
+									class="enroll__form__input"
+									placeholder="E-mail"
+								/>
+								<span class="enroll__form__text">E-mail</span>
+							</label>
+							<label for="school-name" class="enroll__form__label">
+								<input
+									required
+									type="text"
+									name="school-name"
+									id="school-name"
+									class="enroll__form__input"
+									placeholder="Escola"
+								/>
+								<span class="enroll__form__text">Escola</span>
+							</label>
+
+							<label class="enroll__form__label">
+								<span class="enroll__form__select__text">Nível escolar:</span>
+								<select
+									class="enroll__form__select"
+									name="school-year"
+									id="school-year"
+									required
+								>
+									<option value="3rd-term">3º ciclo</option>
+									<option value="highschool">Secundário</option>
+									<option value="professional">Profissional</option>
+								</select>
+							</label>
+
+							<button type="submit" class="enroll__form__button">Enviar</button>
+						</form>
+					</div>
 				</div>
 			</section>
 		</main>
