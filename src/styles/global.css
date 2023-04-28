@@ -428,7 +428,6 @@ h6 {
 	padding-bottom: 15vmin;
 }
 
-
 .home::after {
 	content: "";
 	height: 15vmin;
@@ -1076,12 +1075,7 @@ h6 {
 }
 
 .partners .subtitle {
-	background: var(--gradient--orange);
-
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	font-weight: 500;
+	font-weight: normal;
 }
 
 .partner {
@@ -1092,6 +1086,7 @@ h6 {
 	background: linear-gradient(to bottom left, #0066ff, #109efd);
 
 	padding: 2vmin;
+	box-shadow: 0 0 1rem #0000006e;
 }
 
 .partner__logo {
