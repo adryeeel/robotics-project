@@ -8,12 +8,12 @@
 	}
 }
 
+
 .astronaut {
-	margin-top: 20px;
-	zoom: 1.4;
 	width: 250px;
 	height: 300px;
 	animation: astronaut 5s linear infinite;
+	position: relative;
 }
 
 .schoolbag {
@@ -225,5 +225,3 @@
 	border-radius: 0 30px 0 0;
 	border-bottom: 10px solid #b0cfe4;
 }
-
-/* Fim astronauta */
