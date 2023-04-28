@@ -392,7 +392,8 @@ h6 {
 
 .main__pattern[data-order="5"] {
 	background-position: top center;
-	left: 10%;
+	translate: 0 100%;
+	right: 20%;
 	rotate: -90deg;
 }
 
@@ -544,42 +545,6 @@ h6 {
 	justify-items: center;
 	gap: 2rem;
 }
-/* .goals__container::before {
-	content: "";
-	position: absolute;
-	top: -70%;
-	left: -30%;
-
-	rotate: 30deg;
-
-	z-index: -1;
-
-	background-image: url(../imgs/patterns/blue.png);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-position: top center;
-
-	width: 35vmin;
-	height: 35vmin;
-} */
-
-/* .goals__container::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: -20vmin;
-
-	rotate: 30deg;
-
-	z-index: -1;
-
-	background-image: url(../imgs/patterns/orange.png);
-	background-position: center;
-	background-repeat: no-repeat;
-
-	width: 35vmin;
-	height: 35vmin;
-} */
 
 .goal__card {
 	width: 100%;
@@ -651,43 +616,6 @@ h6 {
 	align-items: center;
 	justify-content: center;
 }
-
-/* Background patterns */
-/* .gallery__container::before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	translate: 0 -50%;
-	right: 0;
-
-	z-index: -1;
-	rotate: 30deg;
-
-	background-image: url(../imgs/patterns/blue.png);
-	background-position: right bottom;
-	background-repeat: no-repeat;
-
-	width: 35vmin;
-	height: 35vmin;
-} */
-
-/* Background patterns */
-/* .gallery__container::after {
-	content: "";
-	position: absolute;
-	top: -20%;
-	left: 20%;
-
-	z-index: -1;
-	rotate: 30deg;
-
-	background-image: url(../imgs/patterns/orange.png);
-	background-position: right bottom;
-	background-repeat: no-repeat;
-
-	width: 35vmin;
-	height: 35vmin;
-} */
 
 .gallery__content {
 	display: flex;
