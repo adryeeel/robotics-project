@@ -11,3 +11,10 @@ const flkty = new Flickity(".gallery-carousel", {
 	contain: true,
 	wrapAround: true,
 });
+
+const galleryTitle = document.querySelector(".gallery__description__title");
+const galleryText = document.querySelector(".gallery__description__text");
+
+flkty.on("select", () => {
+	galleryTitle.innerText = flkty.selectedElement;
+});
