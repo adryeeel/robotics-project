@@ -333,8 +333,9 @@ h6 {
 }
 
 .main__bubble[data-order="1"] {
-	right: 50%;
-	top: 50%;
+	left: 20%;
+	top: 80%;
+	filter: blur(0);
 }
 
 .main__bubble[data-order="2"] {
