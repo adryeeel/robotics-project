@@ -66,14 +66,6 @@
 		</header>
 
 		<main class="main">
-			<div class="main__blob right">
-				<img
-					src="imgs/blobs/simple/orange-1.png"
-					alt=""
-					class="main__blob__image"
-				/>
-			</div>
-
 			<section id="home" class="section home">
 				<div class="section__container home__container flex--center">
 					<div class="home__hero">
@@ -101,11 +93,14 @@
 				</div>
 			</section>
 
-			<div class="main__blob left">
+			<div class="main__pattern blue blurred" data-order="1"></div>
+
+			<div class="main__blob right" style="translate: 0 50%">
 				<img
-					src="imgs/blobs/simple/blue-1.png"
+					src="imgs/blobs/simple/orange-1.png"
 					alt=""
 					class="main__blob__image"
+					style="translate: 50% 0"
 				/>
 			</div>
 
@@ -132,6 +127,14 @@
 			</section>
 
 			<section id="goals" class="section goals">
+				<div class="main__bubble" data-order="1">
+					<img
+						src="imgs/bubbles/bubble-2.png"
+						alt=""
+						class="main__bubble__image"
+					/>
+				</div>
+
 				<div class="section__container goals__container">
 					<div class="section__title">
 						<h2 class="title">Conheça nossos objetivos</h2>
@@ -180,6 +183,16 @@
 				</div>
 			</section>
 
+			<div class="main__blob left">
+				<img
+					src="imgs/blobs/simple/blue-1.png"
+					alt=""
+					class="main__blob__image"
+				/>
+			</div>
+
+			<div class="main__pattern orange" data-order="2"></div>
+
 			<section id="gallery" class="section gallery">
 				<div class="section__container gallery__container">
 					<div class="section__title">
@@ -215,15 +228,28 @@
 				</div>
 			</section>
 
-			<div class="main__blob right">
+			<div class="main__blob right" style="translate: 0 60vmin">
 				<img
 					src="imgs/blobs/simple/orange-2.png"
 					alt=""
 					class="main__blob__image"
+					style="rotate: -45deg"
 				/>
 			</div>
 
+			<div class="main__pattern blue" data-order="3"></div>
+
+			<div class="main__pattern orange" data-order="4"></div>
+
 			<section id="robots" class="section robots">
+				<div class="main__bubble" data-order="2">
+					<img
+						src="imgs/bubbles/bubble-1.png"
+						alt=""
+						class="main__bubble__image"
+					/>
+				</div>
+
 				<div class="section__container robots__container">
 					<div class="section__title">
 						<h2 class="title">A nossa tecnologia</h2>
@@ -288,6 +314,8 @@
 				</div>
 			</section>
 
+			<div class="main__pattern blue blurred" data-order="5"></div>
+
 			<section id="enroll" class="section enroll">
 				<div class="section__container enroll__container">
 					<div class="section__title">
@@ -315,6 +343,7 @@
 									id="name"
 									class="enroll__form__input"
 									placeholder="Nome"
+									autocomplete="off"
 								/>
 								<span class="enroll__form__text">Nome</span>
 							</label>
@@ -326,6 +355,7 @@
 									id="name"
 									class="enroll__form__input"
 									placeholder="E-mail"
+									autocomplete="off"
 								/>
 								<span class="enroll__form__text">E-mail</span>
 							</label>
@@ -337,6 +367,7 @@
 									id="school-name"
 									class="enroll__form__input"
 									placeholder="Escola"
+									autocomplete="off"
 								/>
 								<span class="enroll__form__text">Escola</span>
 							</label>
@@ -362,11 +393,50 @@
 			</section>
 
 			<section id="partners" class="section partners">
+				<div class="main__pattern orange" data-order="6"></div>
+
 				<div class="section__container partners__container">
-					<div class="partner"><img src="" alt="" class="partner__logo" /></div>
-					<div class="partner"><img src="" alt="" class="partner__logo" /></div>
-					<div class="partner"><img src="" alt="" class="partner__logo" /></div>
-					<div class="partner"><img src="" alt="" class="partner__logo" /></div>
+					<div class="section__title">
+						<p class="subtitle">Agradecimento especial aos nossos parceiros.</p>
+					</div>
+					<div class="partners__grid">
+						<div class="partner">
+							<a href="https://ispgaya.pt/" target="_blank">
+								<img
+									src="imgs/logos/parceiros/ispgaya.svg"
+									alt="Logo instituto Gaya"
+									class="partner__logo"
+								/>
+							</a>
+						</div>
+						<div class="partner">
+							<a href="https://www.ua.pt/pt/fabrica/" target="_blank">
+								<img
+									src="imgs/logos/parceiros/fabrica.svg"
+									alt="Logo Fábrica Centro Ciência Viva"
+									class="partner__logo"
+								/>
+							</a>
+						</div>
+						<div class="partner">
+							<a href="http://www.gaiasul.edu.pt/" target="_blank">
+								<img
+									src="imgs/logos/parceiros/cf-aurelio.png"
+									alt="Logo do Centro de formação Aurelio Paz"
+									class="partner__logo"
+								/>
+							</a>
+						</div>
+						<div class="partner">
+							<a href="https://pedroso-seixezelo.pt/" target="_blank">
+								<img
+									src="imgs/logos/parceiros/pdroso.png"
+									alt="Logo freguesia Pedroso e Seixezelo"
+									class="partner__logo"
+								/>
+							</a>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
