@@ -14,6 +14,7 @@ https://flickity.metafizzy.co
 	overflow: hidden;
 	position: relative;
 	height: 100%;
+	transition: height 0.2s;
 }
 
 .flickity-slider {
@@ -80,12 +81,12 @@ https://flickity.metafizzy.co
 /* ---- previous/next buttons ---- */
 
 .flickity-prev-next-button {
-	top: 50%;
-	width: 44px;
-	height: 44px;
-	border-radius: 50%;
 	/* vertically center */
+	top: 50%;
 	transform: translateY(-50%);
+	width: clamp(25px, 8vmin, 50px);
+	height: clamp(25px, 8vmin, 50px);
+	border-radius: 50%;
 }
 
 .flickity-prev-next-button.previous {
