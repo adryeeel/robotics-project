@@ -11,5 +11,4 @@ Footer
 
 - Animaoes scroll
 - Header
-- Descricoes da galeria com JS
-- mostrar as vantanges do mercado de trabalhado de tech
+- parceiros scroll horizontal for mobile
