@@ -1255,9 +1255,23 @@ h6 {
 }
 
 .footer__nav__item__anchor::after,
-.contacts__item__anchor::after {
-	content: "";
+.contacts__item.website .contacts__item__anchor::after {
+	content: "\f061";
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+
 	position: absolute;
+	top: 50%;
+	translate: 0 -50%;
+	opacity: 0;
+
+	transition: translate 100ms ease, opacity 100ms ease;
+}
+
+.footer__nav__item:hover .footer__nav__item__anchor::after,
+.contacts__item.website:hover .contacts__item__anchor::after {
+	opacity: 1;
+	translate: 10px -50%;
 }
 
 .aec {
