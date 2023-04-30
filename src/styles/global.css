@@ -1136,7 +1136,12 @@ h6 {
 	padding: 20vmin 10vmin 10vmin;
 
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 3rem;
+}
+
+.footer__container > * {
+	border: 2px solid red;
 }
 
 .footer__logos {
@@ -1172,10 +1177,11 @@ h6 {
 }
 
 .footer__links {
-	justify-self: center;
+	/* justify-self: center; */
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	/* align-items: center; */
 }
 
 .footer__links__nav {
@@ -1186,12 +1192,13 @@ h6 {
 }
 
 .footer__contact {
-	justify-self: end;
+	/* justify-self: end; */
 }
 
 .footer__nav__item,
 .contacts__item {
 	list-style-type: none;
+	width: max-content;
 }
 
 .footer__nav__item__anchor,
@@ -1233,6 +1240,7 @@ h6 {
 
 .aec {
 	margin-bottom: 5vmin;
+	width: max-content;
 }
 
 .aec__logo {
@@ -1245,22 +1253,40 @@ h6 {
 	font-size: clamp(1.8rem, 2vmin + 0.1rem, 3rem);
 }
 
+.footer__educational {
+	/* grid-column: span 2; */
+	justify-self: center;
+	margin-top: 6vmin;
+
+	display: none;
+}
+
 .educational__text {
 	font-size: 90%;
 	margin-bottom: 0.5rem;
 }
 
-.educational__logos img {
-	max-width: 10vmin;
+.educational__logos {
+	display: flex;
+	flex-wrap: nowrap;
+	max-width: 100%;
+	gap: 1rem;
+	align-items: center;
 }
 
-.educational__logos img:nth-child(1) {
+.educational__logos img {
+	width: 25%;
+	max-width: 12vmin;
+	object-fit: contain;
+}
+
+/* .educational__logos img:nth-child(1) {
 	max-width: 8vmin;
 }
 
 .educational__logos img:nth-child(3) {
 	max-width: 16vmin;
-}
+} */
 
 .footer__contact {
 	display: flex;
@@ -1269,6 +1295,11 @@ h6 {
 
 .contacts {
 	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.contacts__school {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
@@ -1290,6 +1321,34 @@ h6 {
 
 .contact__icon {
 	margin-right: 0.5em;
+}
+
+.footer__logos .medias {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.aec {
+		width: initial;
+	}
+	.footer__logos {
+		grid-area: logos;
+	}
+	.footer__links {
+		grid-area: links;
+	}
+	.footer__contacts {
+		grid-area: contacts;
+	}
+
+	.footer__container {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-areas:
+			"logos"
+			"links"
+			"contacts";
+	}
 }
 
 /* 
