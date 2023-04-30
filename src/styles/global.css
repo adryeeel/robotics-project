@@ -1110,49 +1110,6 @@ h6 {
 	####################
 					START
 */
-/* 
-.footer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background-color: hsl(253, 10%, 18%);
-	position: relative;
-
-	padding-top: 15vmin;
-}
-
-
-.footer__Container {
-	width: 100%;
-	max-width: var(--max-width);
-	margin: 0 auto;
-	padding: 0 8vmin;
-	flex: 1 1 auto;
-}
-.footer_Col50 {
-	margin: 40px;
-	height: 49%;
-}
-.footer__Title {
-	color: white;
-	font-size: 2.7rem;
-	display: flex;
-	justify-content: center;
-	margin-bottom: 1rem;
-}
-
-.footer__Description {
-	color: white;
-	font-size: 1.8rem;
-	text-align: center;
-}
-
-.footer_Col40 {
-	height: 50px;
-	display: flex;
-	gap: 20px;
-	justify-content: center;
-} */
 
 .footer {
 	background-color: var(--color--main);
