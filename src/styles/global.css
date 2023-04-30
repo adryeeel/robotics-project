@@ -1233,7 +1233,7 @@ h6 {
 
 .aec__slogan {
 	font-weight: 500;
-	font-size: clamp(1.4rem, 3vmin + 0.1rem, 2.5rem);
+	font-size: clamp(1.4rem, 3vmin + 0.1rem, 2rem);
 }
 
 .aec__school {
