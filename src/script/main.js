@@ -49,3 +49,23 @@ flkty.on("select", () => {
 	galleryTitle.innerText = descriptions[cellIndex - 1].title;
 	galleryText.innerText = descriptions[cellIndex - 1].text;
 });
+
+function showResponsiveNavigation(button, target) {
+	button.addEventListener("click", () => {
+		target.classList.toggle("visible");
+
+		document.body.classList.toggle("block-scroll");
+		$header.classList.toggle("black");
+	});
+
+	target.addEventListener("click", () => {
+		mobileNavigation.classList.toggle("visible");
+		document.body.classList.toggle("block-scroll");
+		$header.classList.toggle("black");
+	});
+}
+
+const hamburguerButton = document.querySelector(".header__hamburger");
+const mobileNavigation = document.querySelector(".header__responsive");
+
+showResponsiveNavigation(hamburguerButton, mobileNavigation);
