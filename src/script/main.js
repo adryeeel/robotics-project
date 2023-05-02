@@ -52,6 +52,7 @@ flkty.on("select", () => {
 
 function showResponsiveNavigation(button, target) {
 	button.addEventListener("click", () => {
+		button.classList.toggle("open");
 		target.classList.toggle("visible");
 
 		document.body.classList.toggle("block-scroll");
