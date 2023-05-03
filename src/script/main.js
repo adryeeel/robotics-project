@@ -19,7 +19,7 @@ const galleryText = document.querySelector(".gallery__description__text");
 const descriptions = [
 	{
 		title: "Eletrónica",
-		text: "A eletrónica é uma parte fundamental da robótica e, em nosso clube, os alunos terão a oportunidade de aprender sobre circuitos, arduino, componentes electrónicos, tensão e mais. Em seguida, poderão aplicar seus conhecimentos em projetos práticos, como na foto ao lado.",
+		text: "A eletrónica é uma parte fundamental da robótica e, em nosso clube, os alunos terão a oportunidade de aprender sobre circuitos, arduino, componentes electrónicos, tensão e mais. Em seguida, poderão aplicar seus conhecimentos em projetos práticos, utilizando o Arduino.",
 	},
 
 	{
@@ -29,17 +29,17 @@ const descriptions = [
 
 	{
 		title: "Testagem",
-		text: "A testagem é uma etapa fundamental no processo de desenvolvimento de qualquer projeto. É nele que verificamos se o que foi desenvolvido funcionou, e se não, corrigir. No clube AEC Probos, você desenvolverá habilidades de diagonóstico e testagem de programas, circuitos, sensores e mais.",
+		text: "A testagem é uma etapa fundamental no processo de desenvolvimento de qualquer projeto. É quando verificamos se o que foi desenvolvido funcionou, e se não, como corrigir. No clube AEC Probos vai ser possível desenvolver habilidades de diagonóstico e testagem de programas, circuitos, sensores e mais.",
 	},
 
 	{
 		title: "Montagem",
-		text: "Com o nosso programa de aprendizagem didático e intuitivo, você aprenderá a montar robôs de maneira gradual e eficiente, começando com conceitos básicos e progredindo para tarefas mais avançadas à medida que adquire mais habilidades e confiança.",
+		text: "Com as atividades propostas no clube, vai ser possível aprender a montar robôs de maneira gradual e eficiente, começando com conceitos básicos e progredindo para tarefas mais avançadas à medida que adquire mais habilidades e confiança.",
 	},
 
 	{
 		title: "Lógica",
-		text: "O raciocínio lógico é fundamental para o sucesso acadêmico e profissional de qualquer pessoa, e incentivar esse desenvolvimento desde a infância é importante para atingi-lo. Sabendo disso, o AEC Probos proporciona à crianças do ensino primário a oportunidade de desenvolver seu raciocínio lógico desde cedo, de forma divertida e envolvente, além de incentivar o trabalho em equipa, colaboração e comunicação",
+		text: "O raciocínio lógico é fundamental para o sucesso académico e profissional de qualquer pessoa em qualquer área. Sabendo disso, o AEC Probos proporciona a oportunidade de desenvolver o seu raciocínio lógico desde cedo, de forma divertida e envolvente, além de incentivar o trabalho em equipa, a colaboração e a comunicação.",
 	},
 ];
 

@@ -48,7 +48,7 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
-	scroll-padding-top: 20vmin;
+	scroll-padding-top: 10vmin;
 }
 
 body {
@@ -521,7 +521,10 @@ h6 {
 */
 
 .home {
-	background-color: #0066ff;
+	background: url(../imgs/background/home.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+
 	min-height: calc(70svh + 20rem);
 	padding-bottom: 15vmin;
 	position: relative;
@@ -537,7 +540,7 @@ h6 {
 
 	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 	background-color: white;
-	box-shadow: 0 -2vmin 0 2vmin rgba(50, 50, 50, 0.5);
+	box-shadow: 0 -2vmin 0 2vmin #a9dcff79;
 }
 
 .home__hero {
@@ -577,11 +580,13 @@ h6 {
 
 @media screen and (max-width: 768px) {
 	.home {
+		background: url(../imgs/background/home-mobile.svg);
+		background-size: cover;
 		min-height: 100svh;
 	}
 
 	.home__hero {
-		flex-wrap: wrap;
+		flex-wrap: wrap-reverse;
 	}
 }
 
@@ -1263,11 +1268,11 @@ h6 {
 
 	border-radius: 0 0 50% 50% / 0 0 100% 100%;
 	background-color: white;
-	box-shadow: 0 2vmin 0 2vmin rgba(50, 50, 50, 0.5);
+	box-shadow: 0 2vmin 0 2vmin #a9dcff79;
 }
 
 .footer__container {
-	padding: 20vmin 10vmin 10vmin;
+	padding: 20vmin 10vmin 5vmin;
 
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1381,7 +1386,7 @@ h6 {
 }
 
 .footer__educational {
-	justify-self: center;
+	/* justify-self: center; */
 	display: none;
 }
 
@@ -1443,6 +1448,19 @@ h6 {
 
 .footer__logos .medias {
 	display: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.footer__logos .educational {
+		display: none;
+	}
+
+	.footer__educational {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: center;
+		grid-column: span 2;
+	}
 }
 
 @media screen and (max-width: 768px) {
