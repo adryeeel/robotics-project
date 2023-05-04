@@ -24,7 +24,7 @@ const descriptions = [
 
 	{
 		title: "Programação",
-		text: "Quer saber como fazer os robôs pensarem? É através da programação que fazemos isso. O AEC Probos lhe proporcionará a oportunidade de aprender conceitos básicos da programação e aplicar o seu aprendizado em programas simples de robôs, dando inteligência à eles.",
+		text: "Quer saber como fazer os robôs pensarem? É através da programação que fazemos isso. O AEC Probos proporcionará a oportunidade de aprender conceitos básicos da programação e aplicar em programas simples.",
 	},
 
 	{

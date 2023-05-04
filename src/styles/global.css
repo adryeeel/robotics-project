@@ -549,11 +549,41 @@ h6 {
 	gap: 3rem;
 }
 
-.home__hero__element {
+.home__hero__image {
 	flex: 1 1 40%;
 
 	display: flex;
 	justify-content: center;
+}
+
+.home__hero__image img {
+	max-width: 100%;
+
+	animation: floating 2s ease-in-out infinite;
+}
+
+@keyframes floating {
+	0% {
+		translate: 0 0;
+	}
+
+	50% {
+		translate: 0 -5%;
+	}
+
+	100% {
+		translate: 0 0;
+	}
+}
+
+@keyframes rotate {
+	from {
+		rotate: 0;
+	}
+
+	to {
+		rotate: 1turn;
+	}
 }
 
 .home__hero__content {
@@ -614,8 +644,16 @@ h6 {
 	text-align: center;
 }
 
-.about__text {
+.about__description {
 	max-width: 800px;
+}
+
+.about__text {
+	line-height: 2.6rem;
+}
+
+.about__description > :last-child {
+	margin-top: 1rem;
 }
 
 /* 
