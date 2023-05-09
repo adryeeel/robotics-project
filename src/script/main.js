@@ -19,7 +19,7 @@ const galleryText = document.querySelector(".gallery__description__text");
 const descriptions = [
 	{
 		title: "Eletrónica",
-		text: "A eletrónica é uma parte fundamental da robótica e, em nosso clube, os alunos terão a oportunidade de aprender sobre circuitos, arduino, componentes electrónicos, tensão e mais. Em seguida, poderão aplicar seus conhecimentos em projetos práticos, utilizando o Arduino.",
+		text: "A eletrónica é uma parte fundamental da robótica e, no nosso clube, os alunos terão a oportunidade de aprender sobre circuitos e componentes electrónicos. Em seguida, poderão aplicar os seus conhecimentos em projetos práticos, como na foto ao lado, usando o Arduino.",
 	},
 
 	{
